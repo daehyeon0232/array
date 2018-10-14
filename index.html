@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,500,600,700|Titillium+Web:400,600,700,800,900" rel="stylesheet">
+	<title>Array</title>
+	<style>
+		*{padding: 0; margin: 0px; font-family: 'Chakra Petch', sans-serif;, sans-serif; font-weight: 700}
+		body{overflow: hidden;}
+		#frame{position: relative; width: 1500px; height: 800px; background: black; opacity: 1;}
+		#eat{position: absolute; left: 670px; top: 200px; width: 100px; height: 300px; color: yellow; animation: a 8s infinite linear; opacity: 0; font-size: 2em;}
+
+		@keyframes a{
+			0%{left: 600px; width: 300px; top: 50px; height: 600px; transform: rotate(0deg); opacity: 0;}
+			10%{opacity: 1}	
+			88%{top: 300px;}
+			100%{left: 600px; width: 300px; top: 200px; height: 50px; transform: rotate(980deg); opacity: 1;}
+		}
+		#yam_name{position: absolute; top: 220px; left: 650px; width: 170px; height: 50px; line-height: 50px; color: white; font-size: 2.5em; text-align: center; background: green;}
+		#yam{position: absolute; top: 290px; left: 650px; width: 170px;}
+
+		#main_t{position: relative; top: 40px; left: 30px; width: 720px; height: 120px; background: yellow; line-height: 120px; font-size: 6.5em; font-weight: 800; text-align: center; color: black; transform: rotate(-15deg); animation: time 1s infinite alternate;}
+		@keyframes time{
+			from{top: 40px; transform: rotate3d(1,1,50, -10deg)}
+			to{top: 50px; transform: rotate3d(1,1,50, -15deg)}
+		}
+		#assign_name{position: absolute; width: 230px; height: 100px; top: 400px; left: 70px; background: red; text-align: center; font-size: 2em; font-weight: 700; color: white;}
+		#assign{width: 230px;}
+		#die2{position: absolute; width: 500px; top: 50px; right: 100px;}
+		#class{position: absolute; left: 150px; top: 200px; width: 550px; color: white;}
+		#class div{float: left; width: 90px; height: 40px; margin: 15px; text-align: center; background: blue;}
+		#class div #class_img{width: 100px;}
+		#ghost_eat{position: absolute; bottom: 150px; right: 100px; width: 500px; height: 130px; border: 10px solid white; overflow: hidden}
+		#ghost_eat #ghost{position: absolute; margin: 10px; bottom: 5px; width: 100px; animation: ghost_yam 2s linear infinite; animation-delay: 1s; opacity: 0;}
+		#ghost_eat #me{position: absolute; top: -5px; width: 80px; height: 40px; color: white; animation: ghost_yam 2s linear infinite; text-align: center; font-size: 2em;}
+		#ghost_eat #yam2{position: relative; top: 0px; width: 90px;}
+		@keyframes ghost_yam{
+			from{left: -200px; opacity: 1;}
+			to{left: 500px; opacity: 1;}
+		}
+		#idea1{position: absolute; width: 500px; height: 80px; left: 340px; bottom: 170px; line-height: 80px; background: blue; color: white; font-size: 4em; text-align: center; animation: time1 3.5s infinite}
+		@keyframes time1{
+			from{transform: rotate3d(-10,1,1, 0deg)}
+			to{transform: rotate3d(10,1,1, 360deg)}
+		}
+		#where{position: absolute; width: 400px; height: 50px; right: 100px; bottom: 300px; color: white; font-size: 2.5em; text-align: right; font-weight: 400; animation: time2 1.5s infinite}
+		@keyframes time2{
+			from{opacity: 0;}
+			to{opacity: 0.5}
+		}
+	</style>
+</head>
+<body>
+	<audio id="song">
+		<source src="audio/1.mp3" type="audio/mpeg">
+	</audio>
+	<div id="frame">
+		<div id="eat"></div>
+		
+		<img src="./img/die2.gif" id="die2">
+		<div id="yam_name">IDEA</div>
+		<img src="./img/yam.gif" id="yam">
+		<div id="assign_name">Assignment
+			<img src="./img/ghost2.gif" id="assign">
+		</div>
+		<div id="class">
+			<div>
+			<h4>Digital Publishing</h4>
+			<img src="./img/1.gif" id="class_img">
+			</div>
+			<div>
+			<h4>Video Design</h4>
+			<img src="./img/2.gif" id="class_img">
+			</div>
+			<div>
+			<h4>Media Interaction</h4>
+			<img src="./img/3.gif" id="class_img">
+			</div>
+		</div>
+		<div id="main_t">IDEA EAT TIME</div>
+		<div id="ghost_eat">
+			<img src="./img/ghost1.gif" id="ghost">
+			<div id="me">me
+				<img src="./img/yam.gif" id="yam2">
+			</div>
+		</div>
+		<div id="idea1">I have no idea</div>
+		<div id="where">Where is my time</div>
+	</div>
+	
+	<script>
+		var toggle = "off";
+		main_t.onclick = function(){
+		if(toggle == "off"){
+			main_t.style.background = "red";
+			main_t.style.color = "white";
+			assign_name.style.background = "yellow";
+			assign_name.style.color = "black";
+			idea1.style.background = "red";
+			song.play();
+			toggle = "on";
+			}
+		else{
+			main_t.style.background = "yellow"
+			main_t.style.color = "black";
+			assign_name.style.background = "red";
+			assign_name.style.color = "white";
+			idea1.style.background = "blue";
+			song.play();
+			toggle = "off";
+			}
+		}
+		assign_name.onclick = function(){
+		if(toggle == "off"){
+			main_t.style.background = "red";
+			main_t.style.color = "white";
+			assign_name.style.background = "yellow";
+			assign_name.style.color = "black";
+			idea1.style.background = "red";
+			song.play();
+			toggle = "on";
+			}
+		else{
+			main_t.style.background = "yellow"
+			main_t.style.color = "black";
+			assign_name.style.background = "red";
+			assign_name.style.color = "white";
+			idea1.style.background = "blue";
+			song.play();
+			toggle = "off";
+			}
+		}
+		idea1.onclick = function(){
+		if(toggle == "off"){
+			main_t.style.background = "red";
+			main_t.style.color = "white";
+			assign_name.style.background = "yellow";
+			assign_name.style.color = "black";
+			idea1.style.background = "red";
+			song.play();
+			toggle = "on";
+			}
+		else{
+			main_t.style.background = "yellow"
+			main_t.style.color = "black";
+			assign_name.style.background = "red";
+			assign_name.style.color = "white";
+			idea1.style.background = "blue";
+			song.play();
+			toggle = "off";
+			}
+		}
+
+		var text = "E M I T"
+		var newText = text.split(" ");
+		for(var i=0; i< 30; i++){
+			var a = document.getElementById("eat");
+			var b = a.cloneNode(true);
+			b.innerHTML = newText[(i%4)];
+			b.style.animationDelay = i*0.15 +"s";
+			document.body.appendChild(b);
+		}
+	</script>
+</body>
+</html>
